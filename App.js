@@ -7,7 +7,7 @@ export default function App() {
   let [response, setResponse] = useState();
 
   useEffect(() => {
-    fetch("https://official-joke-api.appspot.com/random_ten")
+    fetch("https://imdb-api.com/API/AdvancedSearch/k_utajixp9?locations=London")
       .then(res => res.json())
       .then(
         (result) => {
@@ -27,11 +27,12 @@ export default function App() {
     if (isLoading) {
       return <ActivityIndicator size="large" />;
     }
-    console.log("IV " + response )
+    console.log("IV " + response.results[0].id )
 
-    //return <Text>{ response[0].setup }</Text>
+    const firstTen = response.results.slice(0,10)
 
-    return response.map((movie) => (<Text> Movie:{movie.setup} Location: {movie.punchline}</Text>
+    return firstTen.map((movie, index) => (
+      <Text> {index + 1}: {movie.title} </Text>
     ))
   }
 
