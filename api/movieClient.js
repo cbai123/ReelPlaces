@@ -8,7 +8,7 @@ class MovieClient {
   };
 
   loadMoviesByLocation(location, callback) {
-    fetch(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?has=locations&keywords=${location}`)
+    fetch(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?has=locations&locations=${location}`)
     .then((response) => response.json())
     .then((data) => callback(data))
   }

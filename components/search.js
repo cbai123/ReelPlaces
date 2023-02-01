@@ -8,7 +8,7 @@ const Search = () => {
     setLocation(e.target.value)
   }
 
-  submit = (e) => {
+  const submit = (e) => {
     e.preventDefault()
 
     if (location !== "") {
