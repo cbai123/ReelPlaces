@@ -1,31 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-// import { Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import Search from './components/search';
-import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
+import styles from './styles';
+const image = require('./assets/image1.png')
+// import * as eva from '@eva-design/eva';
+// import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
 
 export default function App() {
   return (
    
-     <ApplicationProvider {...eva} theme={eva.dark}>
-      {/* <View style={styles.container}> */}
-      {/* <View> */}
-        <Text>Open up App.js to start working on your app!</Text>
-        {/* <StatusBar style="auto" /> */}
-        <Search />
-
-      {/* </View> */}
-     </ApplicationProvider>
+      <View style={styles.container}>
+        <div style={styles.navbar}>
+          <img src={image} />
+        </div>
+        <div style={styles.centre}>
+          <Text>Welcome to ReelPlaces!</Text>
+          <Search />
+        </div>
+      </View>
+    //  </ApplicationProvider>
     
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+
