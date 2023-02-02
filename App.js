@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import getListing from "./getListing";
+// const getListing = require("./getListing");
 
 export default function App() {
     return (

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import {Text, ActivityIndicator } from 'react-native';
+import { Text, ActivityIndicator } from 'react-native';
+
 
 const getListing = () => {
-  let [isLoading, setIsLoading] = useState(true);
-  let [response, setResponse] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [response, setResponse] = useState();
+
 
   useEffect(() => {
     fetch("https://imdb-api.com/API/AdvancedSearch/k_utajixp9?locations=London")
@@ -19,14 +21,15 @@ const getListing = () => {
       });
   }, []);
 
-  const getFirstTen = () => {
+  const getFirstTen = (data) => {
     console.log(isLoading);
     if (isLoading) {
       return <ActivityIndicator size="large" />;
     }
     console.log("IV " + response.results[0].id);
 
-    const firstTen = response.results.slice(0, 10);
+    // const firstTen = response.results.slice(0, 10);
+    const firstTen = data.results.slice(0, 10);
 
     return firstTen.map((movie, index) => (
       <Text>
@@ -35,8 +38,8 @@ const getListing = () => {
     ));
   };
 
-  //function render (){
-  return getFirstTen()
+
+  return getFirstTen(response)
   
 };
 
