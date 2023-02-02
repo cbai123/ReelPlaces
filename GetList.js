@@ -20,11 +20,13 @@ const GetList = () => {
     }
     const firstTen = data.results.slice(0, 10);
     return firstTen.map((movie, index) => (
-      <Text>
+      <Text data-testid="TitleID">
         {index + 1}: {movie.title}
       </Text>
     ));
   };
+
+  console.log(response)
   return getFirstTen(response)
 };
 
