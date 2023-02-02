@@ -11,6 +11,9 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+    ],
     "automock": false,
     "resetMocks": false,
     "setupFiles": [
@@ -29,6 +32,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
+    "react-native-svg": "13.4.0",
     "react-native-web": "~0.18.7",
     "react-test-renderer": "18.1.0"
   },

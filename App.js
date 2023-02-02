@@ -1,22 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import Search from './components/search';
 import GetList from "./GetList";
+import styles from './styles';
+const image = require('./assets/image1.png')
+// import * as eva from '@eva-design/eva';
+// import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
 
 export default function App() {
-    return (
+  return (
+   
       <View style={styles.container}>
-        <Text>ReelPlaces</Text>
-        {GetList()}
-        <StatusBar style="auto" />
+        <div style={styles.navbar}>
+          <img src={image} />
+        </div>
+        <div style={styles.centre}>
+          <Text>Welcome to ReelPlaces!</Text>
+          <Search />
+          {GetList()}
+          <StatusBar style="auto" />
+        </div>
       </View>
-    );
+    //  </ApplicationProvider>
+    
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
