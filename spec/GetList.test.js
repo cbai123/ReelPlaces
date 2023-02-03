@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import {render,fireEvent, screen} from "@testing-library/react";
-import GetList from "./GetList";
+import GetList from "../components/GetList";
 import '@testing-library/jest-dom'
 
 beforeEach(() => {
