@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
-import { Text, ActivityIndicator } from 'react-native';
+import { Fragment, useEffect, useState } from 'react';
+import { View, Image, Text, ActivityIndicator } from 'react-native';
 import MovieCard from './MovieCard';
 const apiKey = require('../api/apiKey');
 
 const GetList = (props) => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [response, setResponse] = useState();
+  const isLoading = response == undefined;
 
   useEffect(() => {
     fetch(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?locations=London`)
       .then((res) => res.json())
       .then((result) => {
         setResponse(result);
-        setIsLoading(false);
+        // setIsLoading(false);
       });
   }, []);
 
@@ -22,10 +23,22 @@ const GetList = (props) => {
     }
     const firstTen = data.results.slice(0, 10);
     return firstTen.map((movie, index) => (
-      // <Text data-testid="TitleID">
-      //   {index + 1}: {movie.title}
-      // </Text>
-      <MovieCard imageURL = {props.imageURL} title = {props.title} description = {props.description}/>
+
+      <Fragment key={index} >
+      <div data-testid="TitleID">
+      <Text>{index + 1}:</Text>
+      <Text >{movie.title}</Text>
+      <Text >{movie.description}</Text>
+      <View> 
+        <Image source={{uri: movie.image}} style = {{ width: 200, height: 200 }}/>
+      </View>
+      </div>
+      </Fragment>
+
+      // <MovieCard 
+      //   imageURL={props.imageURL} 
+      //   title={props.title} 
+      //   description={props.description}/>
     ));
   };
 
