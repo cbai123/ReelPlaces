@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Text, ActivityIndicator } from 'react-native';
+import styles from './styles';
 
 const GetList = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,9 +21,10 @@ const GetList = () => {
     }
     const firstTen = data.results.slice(0, 10);
     return firstTen.map((movie, index) => (
-      <Text data-testid="TitleID">
-        {index + 1}: {movie.title}
-      </Text>
+        <Text data-testid="TitleID" style={styles.list}>
+          {index + 1}: {movie.title}
+        </Text>
+
     ));
   };
 
