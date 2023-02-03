@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Text, ActivityIndicator } from 'react-native';
+import apiKey from '../api/apiKey';
+
 
 const GetList = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [response, setResponse] = useState();
+  const isLoading = response == undefined
+
 
   useEffect(() => {
-    fetch("https://imdb-api.com/API/AdvancedSearch/k_utajixp9?locations=London")
+    fetch(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?locations=London`)
       .then((res) => res.json())
       .then((result) => {
         setResponse(result);
-        setIsLoading(false);
       });
   }, []);
 
@@ -20,13 +23,16 @@ const GetList = () => {
     }
     const firstTen = data.results.slice(0, 10);
     return firstTen.map((movie, index) => (
-      <Text data-testid="TitleID">
-        {index + 1}: {movie.title}
-      </Text>
+      <Fragment key={index} >
+      <div data-testid="TitleID">
+      <Text>{index + 1}:</Text>
+      <Text >{movie.title}</Text>
+      </div>
+      </Fragment>
+
     ));
   };
 
-  console.log(response)
   return getFirstTen(response)
 };
 
