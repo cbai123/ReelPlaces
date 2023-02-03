@@ -8,6 +8,40 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)'
   },
+
+  logo: {
+    height: '230px',
+  },
+
+  welcomeText: {
+    fontSize: 'x-large',
+  },
+
+  searchForm: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
+  inputBar: {
+    height: '20px',
+    width: '270px',
+    border: '3px solid #95e1d3',
+    borderRadius: '25px',
+    textAlign: 'center',
+    marginBottom: '10px',
+    marginTop: '30px',
+  },
+
+  sumbitButton: {
+    borderRadius: '20px',
+    border: '3px solid #95e1d3',
+    backgroundColor: 'lightcyan',
+    color: 'black',
+    width: '70px',
+    height: '25px',
+  },
+
   centre: {
     padding: '100px',
     display: 'flex',
@@ -16,6 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     maxWidth: '50em',
   },
+  
   navbar: {
     display: 'flex',
     justifyContent: 'center',
@@ -25,13 +60,14 @@ const styles = StyleSheet.create({
     width: '100%',
     overflow: 'hidden',
     zIndex: '999',
-    height: '120px',
+    height: '200px',
   },
+
   list: {
     display: 'flex', 
     flexDirection: 'column',
     alignItems: 'center'
-  }
+  },
 })
 
 export default styles

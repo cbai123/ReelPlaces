@@ -33,8 +33,8 @@ const Search = () => {
   return(
     <>
       <form style={styles.searchForm}>
-        <input type="text" placeholder="Enter a Location.." data-testid="searchBar" value={location} onChange={handlesSearchChange}/>
-        <input style={styles.noSubmit} type="submit" data-testid="submitBtn" onClick={submit}/>
+        <input type="text" placeholder="Enter a Location.." data-testid="searchBar" value={location} onChange={handlesSearchChange} style={styles.inputBar}/>
+        <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={submit}/>
       </form>
       {resultsVisible && <div  style={styles.list}>
         <GetList list={list} isLoading={isLoading}/>
