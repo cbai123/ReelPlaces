@@ -13,12 +13,14 @@ export default function App() {
    
       <View style={styles.container}>
         <div style={styles.navbar}>
-          <img src={image} />
+          <img src={image}/>
         </div>
         <div style={styles.centre}>
           <Text>Welcome to ReelPlaces!</Text>
           <Search />
+          <div  style={styles.row}>
           {GetList()}
+          </div>
           <StatusBar style="auto" />
         </div>
       </View>

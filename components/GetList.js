@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import { View, Image, Text, ActivityIndicator } from 'react-native';
 import MovieCard from './MovieCard';
+import styles from "../styles";
 const apiKey = require('../api/apiKey');
 
 const GetList = (props) => {
@@ -21,18 +22,17 @@ const GetList = (props) => {
     if (isLoading) {
       return <ActivityIndicator size="large" />;
     }
-    const firstTen = data.results.slice(0, 10);
+    const firstTen = data.results.slice(0, 20);
     return firstTen.map((movie, index) => (
 
-      <Fragment key={index} >
-      <div data-testid="TitleID">
-      <Text>{index + 1}:</Text>
-      <Text >{movie.title}</Text>
-      <Text >{movie.description}</Text>
-      <View> 
-        <Image source={{uri: movie.image}} style = {{ width: 200, height: 200 }}/>
-      </View>
-      </div>
+      <Fragment key={index}>
+        <div data-testid="TitleID" style={styles.column}>
+        <Text ><strong>{movie.title} </strong></Text>
+        <Text ><strong>{movie.description}</strong></Text>
+        <View style={styles.imagePadding}> 
+          <Image source={{uri: movie.image}} style = {{ width: 200, height: 300 }}/>
+        </View>
+        </div>
       </Fragment>
 
       // <MovieCard 

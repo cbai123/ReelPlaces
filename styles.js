@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: "center",
-    maxWidth: '50em',
     // backgroundColor: '#95e1d3',
     // borderRadius: '20px',
     // boxShadow: '0 0 10px #888'
@@ -98,7 +97,25 @@ const styles = StyleSheet.create({
     backgroundSize: '13px',
     backgroundRepeat: 'no-repeat',
     // backgroundPosition: '10px center',
+  },
+
+  column: {
+    flex: "20%",
+    padding: "5px",
+  },
+  
+  /* Clear floats after image containers */
+  row: {
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "20%",
+    padding: "5px",
+  },
+
+  imagePadding: {
+    padding: "4px"
   }
+
 })
 
 export default styles
