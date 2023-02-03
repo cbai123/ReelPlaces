@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View } from 'react-native';
 import Search from './components/search';
-import GetList from "./GetList";
+import GetList from "./components/GetList";
 import styles from './styles';
 const image = require('./assets/image1.png')
 // import * as eva from '@eva-design/eva';
