@@ -1,10 +1,9 @@
 import { Fragment, useEffect, useState } from 'react';
 import { View, Image, Text, ActivityIndicator } from 'react-native';
-import MovieCard from './MovieCard';
 import styles from "../styles";
 const apiKey = require('../api/apiKey');
 
-const GetList = (props) => {
+const GetList = () => {
   // const [isLoading, setIsLoading] = useState(true);
   const [response, setResponse] = useState();
   const isLoading = response == undefined;
@@ -35,10 +34,6 @@ const GetList = (props) => {
         </div>
       </Fragment>
 
-      // <MovieCard 
-      //   imageURL={props.imageURL} 
-      //   title={props.title} 
-      //   description={props.description}/>
     ));
   };
 
