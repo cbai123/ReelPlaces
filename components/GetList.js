@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import { View, Image, Text, ActivityIndicator } from 'react-native';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
-import styles from './styles';
+import styles from '../styles';
 import apiKey from '../api/apiKey'
 
 const GetList = ({ list, isLoading }) => {

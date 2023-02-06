@@ -1,5 +1,5 @@
 import { Component, useState } from "react"
-import GetList from '../GetList'
+import GetList from './GetList'
 import MovieClient from "../api/movieClient";
 import apiKey from "../api/apiKey";
 import styles from "../styles";

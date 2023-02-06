@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Search from "./search";
 import { StatusBar } from "expo-status-bar";
 import styles from "../styles";
-const image = require("../assets/image1.png");
+const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
   const location = useLocation();

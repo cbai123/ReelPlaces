@@ -8,7 +8,7 @@ const image = require('../assets/reelplaces.png')
 const Home = () => {
   return (
       <View style={styles.container}>
-        <div style={styles.navbar}>
+        <div >
           <img src={image} style={styles.logo}/>
         </div>
         <div style={styles.centre}>
