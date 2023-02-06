@@ -1,32 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
+import Home from './components/Home';
+import MovieInfo from './components/movieinfo';
 import React from 'react';
-import { Text, View } from 'react-native';
-import Search from './components/search';
-import GetList from "./components/GetList";
-import styles from './styles';
-const image = require('./assets/image1.png')
-// import * as eva from '@eva-design/eva';
-// import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 export default function App() {
-  return (
-   
-      <View style={styles.container}>
-        <div style={styles.navbar}>
-          <img src={image}/>
-        </div>
-        <div style={styles.centre}>
-          <Text>Welcome to ReelPlaces!</Text>
-          <Search />
-          <div  style={styles.row}>
-          {GetList()}
-          </div>
-          <StatusBar style="auto" />
-        </div>
-      </View>
-    //  </ApplicationProvider>
-    
+  return ( 
+    <main>
+      <Router>
+        <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/movieinfo" element={<MovieInfo/>} />
+        </Routes>
+      </Router>
+    </main>
   );
 }
+
 
 
