@@ -6,7 +6,10 @@ const styles = StyleSheet.create({
     // backgroundColor: '#fffae6',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)'
+    backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)',
+    // backgroundRepeat: "no-repeat",
+    // backgroundAttachment: "fixed",
+    // height: "100vh"
   },
   centre: {
     padding: '100px',
@@ -128,8 +131,11 @@ const styles = StyleSheet.create({
   },
   movieText: {
     flex: "50%",
-    marginRight: "30%",
-    lineHeight: "15pt"
+    marginRight: "10%",
+    marginLeft: "-15%",
+    lineHeight: "15pt",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
   },
 
   fontLoader: {
