@@ -21,8 +21,7 @@ const Home = () => {
           <StatusBar style="auto" />
         </div>
       </View>
-    //  </ApplicationProvider>
-    
+    //  </ApplicationProvider>  
   );
 };
 

@@ -28,7 +28,7 @@ const GetList = () => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            <Link to={'/movieinfo'}> 
+            <Link to={'/movieinfo'} state={{movie: movie}}> 
               <Text ><strong>{movie.title} </strong></Text>
               <Text ><strong>{movie.description}</strong></Text>
               <View style={styles.imagePadding}> 

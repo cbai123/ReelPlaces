@@ -14,7 +14,4 @@ export default function App() {
       </Router>
     </main>
   );
-}
-
-
-
+};
