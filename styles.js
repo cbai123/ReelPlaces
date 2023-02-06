@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     marginTop: '30px',
   },
 
-  sumbitButton: {
+  submitBtn: {
     borderRadius: '20px',
     border: '3px solid #95e1d3',
     backgroundColor: 'lightcyan',
