@@ -1,36 +1,45 @@
 import { Component, useState } from "react"
+import GetList from '../GetList'
 import MovieClient from "../api/movieClient";
+import apiKey from "../api/apiKey";
 import styles from "../styles";
 
 const Search = () => {
   const [location, setLocation] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
+  const [list, setList] = useState('')
+  const [resultsVisible, setResultsVisible] = useState(false)
 
   const handlesSearchChange = (e) => {
     setLocation(e.target.value)
   }
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
 
     if (location !== "") {
-      const movieClient = new MovieClient()
-      movieClient.loadMoviesByLocation(location, data => {console.log(data)})
+      setResultsVisible(true)
+      setIsLoading(true)
+
+      fetch(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?has=locations&locations=${location}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setList(data.results);
+        setIsLoading(false);
+      });
     }
   }
 
   return(
-    <form style={styles.searchForm}>
-      <input type="text" placeholder="Enter a Location.." data-testid="searchBar" value={location} onChange={handlesSearchChange}/>
-      <input styles={styles.noSubmit} type="submit" data-testid="submitBtn" onClick={submit}/>
-    </form>
-    // <div style={styles.wrap}>
-    //   <div style={styles.search}>
-    //     <input type="text" style={styles.searchTerm} placeholder="Enter a location..." value={location} onChange={handlesSearchChange}/>
-    //     <button type="submit" style={styles.searchButton} onClick={submit}>
-    //       {/* <i className="fa fa-search"></i> */}
-    //     </button>
-    //   </div>
-    // </div>
+    <>
+      <form style={styles.searchForm}>
+        <input type="text" placeholder="Enter a Location.." data-testid="searchBar" value={location} onChange={handlesSearchChange} style={styles.inputBar}/>
+        <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={submit}/>
+      </form>
+      {resultsVisible && <div  style={styles.list}>
+        <GetList list={list} isLoading={isLoading}/>
+      </div>}
+    </>
   );
 };
 
