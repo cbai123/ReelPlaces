@@ -114,7 +114,28 @@ const styles = StyleSheet.create({
 
   imagePadding: {
     padding: "4px"
+  },
+
+  movieInfoWrapper: {
+    display: "flex"
+  },
+
+  movieImage: {
+    flex: "50%",
+    marginLeft: "35%"
+
+
+  },
+  movieText: {
+    flex: "50%",
+    marginRight: "30%",
+    lineHeight: "15pt"
+  },
+
+  fontLoader: {
+    fontFamily: 'Roboto'
   }
+  
 
 })
 

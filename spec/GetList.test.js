@@ -19,7 +19,6 @@ describe("<GetList/>", () => {
     );
     
     render(< GetList />)
-
     //const { container } = render(< GetList />)
     // const title = await container.querySelector(".movie-title")
     expect(fetch).toHaveBeenCalledTimes(1)
