@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Text, ActivityIndicator } from 'react-native';
 import styles from './styles';
 import apiKey from './api/apiKey'
