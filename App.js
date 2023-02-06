@@ -1,31 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View } from 'react-native';
-import Search from './components/search';
-import GetList from "./components/GetList";
-import styles from './styles';
-const image = require('./assets/reelplaces.png')
-// import * as eva from '@eva-design/eva';
-// import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
+import Home from './components/Home';
+import MovieInfo from './components/movieinfo';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import WebFont from 'webfontloader';
+
+
 
 export default function App() {
-  return (
-   
-      <View style={styles.container}>
-        <div style={styles.navbar}>
-          <img src={image} style={styles.logo}/>
-        </div>
-        <div style={styles.centre}>
-          <div style={styles.welcomeTextContainer} >
-            <Text style={styles.welcomeText}>WELCOME TO REELPLACES!</Text>
-          </div>
-          <Search />
-          <StatusBar style="auto" />
-        </div>
-      </View>
-    //  </ApplicationProvider>
-    
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Roboto']
+      }
+    });
+   }, []);
+
+
+  return ( 
+    <main>
+      <Router>
+        <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/movieinfo" element={<MovieInfo/>} />
+        </Routes>
+      </Router>
+    </main>
   );
-}
-
-
+};

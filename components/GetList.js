@@ -1,7 +1,8 @@
 import { Fragment, useEffect, useState } from 'react';
-import { Text, ActivityIndicator } from 'react-native';
+import { View, Image, Text, ActivityIndicator } from 'react-native';
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import styles from './styles';
-import apiKey from './api/apiKey'
+import apiKey from '../api/apiKey'
 
 const GetList = ({ list, isLoading }) => {
 
@@ -9,12 +10,22 @@ const GetList = ({ list, isLoading }) => {
     if (isLoading) {
       return <ActivityIndicator size="large" />;
     }
-
-    const firstTen = data.slice(0, 10);
+    const firstTen = data.slice(0, 20);
     return firstTen.map((movie, index) => (
-        <Text data-testid="TitleID" key={movie.id}>
-          {index + 1}: {movie.title}
-        </Text>
+
+      <Fragment key={index}>
+        <div data-testid="TitleID" style={styles.column}>
+          <li>
+            <Link to={'/movieinfo'} state={{movie: movie}}> 
+              <Text ><strong>{movie.title} </strong></Text>
+              <Text ><strong>{movie.description}</strong></Text>
+              <View style={styles.imagePadding}> 
+                <Image source={{uri: movie.image}} style = {{ width: 200, height: 300 }}/>
+              </View>
+            </Link>
+          </li>
+        </div>
+      </Fragment>
 
     ));
   };

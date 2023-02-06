@@ -36,7 +36,7 @@ const Search = () => {
         <input type="text" placeholder="Enter a Location.." data-testid="searchBar" value={location} onChange={handlesSearchChange} style={styles.inputBar}/>
         <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={submit}/>
       </form>
-      {resultsVisible && <div  style={styles.list}>
+      {resultsVisible && <div  style={styles.row}>
         <GetList list={list} isLoading={isLoading}/>
       </div>}
     </>
