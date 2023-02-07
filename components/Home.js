@@ -12,14 +12,14 @@ const Home = () => {
   const isLoading = trending == undefined
 
   useEffect(() => {
-    fetch(`https://imdb-api.com/en/API/BoxOffice/${apiKey}`)
+    fetch(`https://imdb-api.com/en/API/InTheaters/${apiKey}`)
     .then((res) => res.json())
     .then((result) => {
-      setTrending(result.items);
+      setTrending(result.items.slice(0, 16));
     });
   }, []);
 
-  const getTopTen = (data) => {
+  const getTopFilms = (data) => {
     if (isLoading) {
       return <ActivityIndicator size="large" />
     }
@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
       <View>
-        {/* <View style={styles.container}>
+        <View style={styles.container}>
           <div>
             <img src={image} style={styles.logo}/>
           </div>
@@ -38,21 +38,23 @@ const Home = () => {
             <Search />
             <StatusBar style="auto" />
           </div>
-        </View> */}
+        </View>
 
         <View>
-        <h2 style={styles.fontLoader}>  This weeks trending movies! </h2>
+        <Text style={styles.homeTitle}>  This weeks trending movies! </Text>
         <div style={styles.homeColumn}>
         {/* <div style={styles.homeRow}> */}
           {topTen.map((movie, index) => (
             // <li>
-            <div>
+            <div style={styles.row}>
               <Fragment key={index}>
                 {/* <Link to={'/movieinfo'} state={{movie: movie}}>  */}
+                <div style={styles.movieContainer}>
                   <Text><strong>{movie.title} </strong></Text>
                   <View style={styles.homeImage}> 
                     <Image source={{uri: movie.image}} style={{ width: 200, height: 300 }} />
                   </View>
+                </div>
                 {/* </Link> */}
               </Fragment>
             </div>
@@ -65,7 +67,7 @@ const Home = () => {
     );
   };
 
-  return getTopTen(trending)
+  return getTopFilms(trending)
 };
 
 export default Home

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 
   welcomeText: {
-    fontSize: 'x-large',
+    fontSize: 'xx-large',
   },
 
   searchForm: {
@@ -129,7 +129,6 @@ const styles = StyleSheet.create({
     padding: "5px",
   },
   
-  /* Clear floats after image containers */
   row: {
     display: "flex",
     flexWrap: "wrap",
@@ -166,7 +165,7 @@ const styles = StyleSheet.create({
   homeColumn: {
     display: "flex",
     flexWrap: "wrap",
-    flex: "30%",
+    flex: "25%",
     padding: "15px"
   },
 
@@ -177,13 +176,20 @@ const styles = StyleSheet.create({
     display: "flex",
     flexWrap: "wrap",
     flex: "33.33%"
-  }
+  },
 
-  // homeRow: {
-  //   content: "",
-  //   clear: "both",
-  //   display: "table"
-  // }
+  homeTitle: {
+    margin: "auto",
+    width: "30%",
+    fontSize: 'xx-large',
+    paddingBottom: "50px"
+  },
+
+  movieContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
 
 })
 
