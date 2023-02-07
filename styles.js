@@ -38,14 +38,14 @@ const styles = StyleSheet.create({
 
   submitBtn: {
     borderRadius: '20px',
-    border: '3px solid #95e1d3',
+    border: '2px solid black',
     backgroundColor: 'lightcyan',
     color: 'black',
     width: '70px',
     height: '25px',
   },
 
-  centre: {
+  centre: { 
     padding: '100px',
     display: 'flex',
     flexDirection: 'column',
