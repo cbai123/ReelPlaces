@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)',
-    // backgroundRepeat: "no-repeat",
-    // backgroundAttachment: "fixed",
-    // height: "100vh"
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    height: "100vh"
   },
 
   logo: {
@@ -148,9 +148,8 @@ const styles = StyleSheet.create({
   movieImage: {
     flex: "50%",
     marginLeft: "35%"
-
-
   },
+
   movieText: {
     flex: "50%",
     marginRight: "10%",
@@ -162,8 +161,29 @@ const styles = StyleSheet.create({
 
   fontLoader: {
     fontFamily: 'Roboto'
+  },
+
+  homeColumn: {
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "30%",
+    padding: "15px"
+  },
+
+  homeImage: {
+    padding: "4px",
+    marginTop: "10px",
+    // marginBottom: "20px",
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "33.33%"
   }
-  
+
+  // homeRow: {
+  //   content: "",
+  //   clear: "both",
+  //   display: "table"
+  // }
 
 })
 
