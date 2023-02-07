@@ -35,6 +35,8 @@ const Search = () => {
       <form style={styles.searchForm}>
         <input type="text" placeholder="Enter a Location.." data-testid="searchBar" value={location} onChange={handlesSearchChange} style={styles.inputBar}/>
         <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={submit}/>
+        {/* Country: <select class="gds-cr" country-data-region-id="gds-cr-one" data-language="en"></select>
+        Region: <select id="gds-cr-one"></select> */}
       </form>
       {resultsVisible && <div  style={styles.row}>
         <GetList list={list} isLoading={isLoading}/>
