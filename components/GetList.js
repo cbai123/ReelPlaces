@@ -5,6 +5,7 @@ import styles from '../styles';
 import apiKey from '../api/apiKey'
 
 const GetList = ({ list, isLoading }) => {
+  
 
   const getFirstTen = (data) => {
     if (isLoading) {

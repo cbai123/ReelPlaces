@@ -1,4 +1,4 @@
-// import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { View, Image, Text, ActivityIndicator } from "react-native";
 import { useLocation } from "react-router-dom";
 import Search from "./search";
@@ -7,8 +7,25 @@ import styles from "../styles";
 const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
+  const [locationArray, setLocationArray] = useState([])
   const location = useLocation();
   const { movie } = location.state;
+  const id = movie.id
+
+  useEffect(() => {
+    async function getLocations() {
+      const url = `http://localhost:3000/api/getOne/${id}`
+      const response = await fetch(url)
+      console.log(response)
+      const data = await response.json()
+
+      setLocationArray(data.locations)
+      console.log(data.locations)
+    }
+
+    getLocations()
+  }, [])
+  
   return (
     <>
       <View style={styles.container}>

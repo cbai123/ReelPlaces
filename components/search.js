@@ -53,7 +53,7 @@ const Search = () => {
       />
       <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={submit}/>
       {resultsVisible && <div  style={styles.row}>
-        <GetList list={list} isLoading={isLoading}/>
+        <GetList list={list} isLoading={isLoading} location = {location}/>
       </div>}
     </>
   );
