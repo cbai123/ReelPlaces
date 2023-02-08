@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image, ActivityIndicator } from 'react-native';
-import { Link } from 'react-router-dom';
 import Search from './search';
 import styles from '../styles';
 import {apiKey, googleKey} from "../api/apiKey";
@@ -10,6 +9,7 @@ const image = require('../assets/reelplaces.png')
 
 const Home = () => {
   const [trending, setTrending] = useState();
+  const [hideTrending, setHideTrending] = useState(false);
   const isLoading = trending == undefined
 
   useEffect(() => {
@@ -36,32 +36,27 @@ const Home = () => {
             <div style={styles.welcomeTextContainer} >
               <Text style={styles.welcomeText}>WELCOME TO REELPLACES!</Text>
             </div>
-            <Search />
+            <Search hideTrending={hideTrending} setHideTrending={setHideTrending} />
             <StatusBar style="auto" />
           </div>
         </View>
 
-        <View>
-        <Text style={styles.homeTitle}>  This weeks trending movies! </Text>
-        <div style={styles.homeColumn}>
-          {topTen.map((movie, index) => (
-            <li key={index}>
-            <div style={styles.row}>
-              <div style={styles.movieContainer}>
-                {/* <Link to={'/movieinfo'} state={{movie: movie}}> 
-                  <Text><strong>{movie.title} </strong></Text>
-                  <View style={styles.homeImage}> 
-                    <Image source={{uri: movie.image}} style={{ width: 200, height: 300 }} />
-                  </View> */}
-                {/* </div> */}
-                {/* </Link> */}
-                <MovieSummary style={styles.homeImage} movie={movie} />
+        {!hideTrending && (
+          <View>
+          <Text style={styles.homeTitle}>  This weeks trending movies! </Text>
+          <div style={styles.homeColumn}>
+            {topTen.map((movie, index) => (
+              <li key={index}>
+              <div style={styles.row}>
+                <div style={styles.movieContainer}>
+                  <MovieSummary style={styles.homeImage} movie={movie} />
+                </div>
               </div>
-            </div>
-            </li>
-          ))}
-        </div>
-        </View>
+              </li>
+            ))}
+          </div>
+          </View>
+        )};
       </View>
     );
   };

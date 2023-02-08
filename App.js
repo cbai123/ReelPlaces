@@ -2,7 +2,6 @@ import Home from './components/Home';
 import MovieInfo from './components/movieinfo';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import { useRoutes } from 'react-router-dom';
 import WebFont from 'webfontloader';
 
 export default function App() {
@@ -14,15 +13,6 @@ export default function App() {
       }
     });
    }, []);
-
-
-  // let element = useRoutes([
-  //   {path: "/", element: <Home/>},
-  //   {path: "/movieinfo", element: <MovieInfo/>},
-  // ]);
-
-  // return element
-
 
   return ( 
     <main>
