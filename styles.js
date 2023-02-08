@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)',
-    // backgroundRepeat: "no-repeat",
-    // backgroundAttachment: "fixed",
-    // height: "100vh"
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    height: "100vh"
   },
 
   logo: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 
   welcomeText: {
-    fontSize: 'x-large',
+    fontSize: 'xx-large',
   },
 
   searchForm: {
@@ -129,7 +129,6 @@ const styles = StyleSheet.create({
     padding: "5px",
   },
   
-  /* Clear floats after image containers */
   row: {
     display: "flex",
     flexWrap: "wrap",
@@ -148,9 +147,8 @@ const styles = StyleSheet.create({
   movieImage: {
     flex: "50%",
     marginLeft: "35%"
-
-
   },
+
   movieText: {
     flex: "50%",
     marginRight: "10%",
@@ -162,8 +160,36 @@ const styles = StyleSheet.create({
 
   fontLoader: {
     fontFamily: 'Roboto'
+  },
+
+  homeColumn: {
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "25%",
+    padding: "15px"
+  },
+
+  homeImage: {
+    padding: "4px",
+    marginTop: "10px",
+    // marginBottom: "20px",
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "33.33%"
+  },
+
+  homeTitle: {
+    margin: "auto",
+    width: "30%",
+    fontSize: 'xx-large',
+    paddingBottom: "50px"
+  },
+
+  movieContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   }
-  
 
 })
 
