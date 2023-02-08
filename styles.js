@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)',
     // backgroundRepeat: "no-repeat",
     // backgroundAttachment: "fixed",
-    // height: "100vh"
+    minHeight: "100vh",
   },
 
   logo: {
@@ -137,31 +137,85 @@ const styles = StyleSheet.create({
     padding: "5px",
   },
 
-  imagePadding: {
-    padding: "4px"
-  },
+  // imagePadding: {
+  //   padding: "4px"
+  // },
 
   movieInfoWrapper: {
-    display: "flex"
+    display: "flex",
+    // flexDirection: "row",
+    // width: "100%",
+    marginLeft: "4.5%",
+    alignSelf: "flex-start",
+    // marginTop: "15%",
+    padding: "10px",
+    backgroundColor: "rgb(249, 249, 249, 51%)",
+    boxShadow: "2px 8px 15px #888888",
   },
 
   movieImage: {
     flex: "50%",
-    marginLeft: "35%"
-
-
+    padding: "30px"
   },
+
   movieText: {
-    flex: "50%",
-    marginRight: "10%",
-    marginLeft: "-15%",
+    flex: "100%",
+    marginLeft: "0%",
     lineHeight: "15pt",
-    overflow: "hidden",
-    textOverflow: "ellipsis"
+    padding: "30px",
+    maxWidth: "450px",
+    // overflow: "hidden",
+    // textOverflow: "ellipsis"
   },
 
   fontLoader: {
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
+
+  },
+
+  movieNavbar: {
+    // display: 'flex',
+    // justifyContent: 'left',
+    backgroundColor: 'rgba (0, 0, 0, 0)',
+    position: 'fixed',
+    top: '0px',
+    width: '100%',
+    overflow: 'hidden',
+    zIndex: '999',
+    height: '150px',
+  },
+
+  movieSearch: {
+    float: "right",
+    padding: "6px",
+    border: "none",
+    marginTop: "8px",
+    marginRight: "16px",
+    fontSize: "17px",
+    display: "flex", 
+  },
+
+  moviePageLogo: {
+    height: "110px",
+    marginLeft: "1%",
+  },
+
+  movieTitle: {
+    display: "fixed",
+    // flexDirection: "row",
+    width: "100%",
+    marginLeft: "8.5%",
+    marginTop: "8%",
+    fontSize: "25px",
+  },
+
+  movieDetails: {
+    display: "block",
+    marginBottom: "50px",
+    paddingBottom: "5px",
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+
   }
   
 

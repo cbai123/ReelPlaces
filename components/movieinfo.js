@@ -12,15 +12,19 @@ const MovieInfo = () => {
   return (
     <>
       <View style={styles.container}>
-        <div style={styles.navbar}>
-          <img src={image} />
-        </div>
-        <div style={styles.centre}>
-          <Text>Welcome to ReelPlaces!</Text>
-          <Search />
-          <StatusBar style="auto" />
+        <div style={styles.movieNavbar}>
+          <img src={image} style={styles.moviePageLogo} />
+          <div style={styles.movieSearch}>
+            <Search />
+            {/* <StatusBar style="auto" /> */}
+          </div>
         </div>
 
+        <div style={styles.movieTitle}>
+          <h1 style={styles.fontLoader}>
+              {movie.title} {movie.description}{'\n'}
+          </h1>
+        </div>
 
           {/* wrapping div */}
           <div style={styles.movieInfoWrapper}>
@@ -28,30 +32,27 @@ const MovieInfo = () => {
               <View style={styles.imagePadding}>
                 <Image
                   source={{ uri: movie.image }}
-                  style={{ width: 200, height: 300 }}
+                  style={{ width: 400, height: 600 }}
                 />
               </View>
             </div>
 
             {/* text */}
             <div style={styles.movieText}>
-              <h2 style={styles.fontLoader}>
-                <strong>{movie.title}{'\n'}</strong>
-              </h2>
 
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Release year:</strong> {movie.description}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Plot:</strong> {movie.plot}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Runtime:</strong> {movie.runtimeStr}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Stars:</strong> {movie.stars}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>IMDb Rating:</strong> {movie.imDbRating}{'\n'}
               </Text>
             </div>
