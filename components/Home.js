@@ -4,7 +4,7 @@ import { Text, View, Image, ActivityIndicator } from 'react-native';
 import { Link } from 'react-router-dom';
 import Search from './search';
 import styles from '../styles';
-import apiKey from '../api/apiKey';
+import {apiKey, googleKey} from "../api/apiKey";
 import MovieSummary from './MovieSummary';
 const image = require('../assets/reelplaces.png')
 
