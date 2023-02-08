@@ -4,12 +4,12 @@ import GetList from './GetList'
 import {apiKey, googleKey} from "../api/apiKey";
 import styles from "../styles";
 
-const Search = () => {
+const Search = (props) => {
   const [location, setLocation] = useState("")
   const [isLoading, setIsLoading] = useState(true)
   const [list, setList] = useState('')
   const [resultsVisible, setResultsVisible] = useState(false)
-
+  
   const submit = async (e) => {
     e.preventDefault()
 
@@ -26,8 +26,12 @@ const Search = () => {
         setIsLoading(false);
       });
     }
-  }
+  };
 
+  const hideView= () => {
+    props.setHideTrending(!props.hideTrending)
+  };
+  
   return(
     <>
       <GooglePlacesAutocomplete
@@ -51,8 +55,8 @@ const Search = () => {
           types: ['(cities)']
         }}
       />
-      <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={submit}/>
-      {resultsVisible && <div  style={styles.row}>
+      <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={ (e) => { submit(e); hideView(); }}/>
+      {resultsVisible && <div style={styles.row}>
         <GetList list={list} isLoading={isLoading}/>
       </div>}
     </>
