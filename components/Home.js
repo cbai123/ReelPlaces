@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, Image, ActivityIndicator } from 'react-native';
-import {BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Search from './search';
 import styles from '../styles';
 import apiKey from '../api/apiKey';
+import MovieSummary from './MovieSummary';
 const image = require('../assets/reelplaces.png')
 
 const Home = () => {
@@ -43,24 +44,22 @@ const Home = () => {
         <View>
         <Text style={styles.homeTitle}>  This weeks trending movies! </Text>
         <div style={styles.homeColumn}>
-        {/* <div style={styles.homeRow}> */}
           {topTen.map((movie, index) => (
-            // <li>
+            <li key={index}>
             <div style={styles.row}>
-              <Fragment key={index}>
-                {/* <Link to={'/movieinfo'} state={{movie: movie}}>  */}
-                <div style={styles.movieContainer}>
+              <div style={styles.movieContainer}>
+                {/* <Link to={'/movieinfo'} state={{movie: movie}}> 
                   <Text><strong>{movie.title} </strong></Text>
                   <View style={styles.homeImage}> 
                     <Image source={{uri: movie.image}} style={{ width: 200, height: 300 }} />
-                  </View>
-                </div>
+                  </View> */}
+                {/* </div> */}
                 {/* </Link> */}
-              </Fragment>
+                <MovieSummary style={styles.homeImage} movie={movie} />
+              </div>
             </div>
-            // </li>
+            </li>
           ))}
-        {/* </div> */}
         </div>
         </View>
       </View>
