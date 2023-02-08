@@ -141,12 +141,30 @@ const styles = StyleSheet.create({
   //   padding: "4px"
   // },
 
+  movieInfoContent: {
+    display: "flex",
+    marginLeft: "4.5vw",
+    marginRight: "4.5vw",
+    alignSelf: "flex-start",
+
+  },
+
+  suggestedMovies: {
+    display: "inline",
+    borderColor: "white",
+    borderWidth: 2,
+    width: "20vw",
+    marginLeft: "19vw",
+    // alignSelf: "flex-end",
+    padding: "10px",
+    backgroundColor: "rgb(249, 249, 249, 51%)",
+    boxShadow: "2px 8px 15px #888888"
+  },
+
   movieInfoWrapper: {
     display: "flex",
     // flexDirection: "row",
     // width: "100%",
-    marginLeft: "4.5%",
-    alignSelf: "flex-start",
     // marginTop: "15%",
     padding: "10px",
     backgroundColor: "rgb(249, 249, 249, 51%)",
@@ -163,7 +181,7 @@ const styles = StyleSheet.create({
     marginLeft: "0%",
     lineHeight: "15pt",
     padding: "30px",
-    maxWidth: "450px",
+    maxWidth: "23vw",
     // overflow: "hidden",
     // textOverflow: "ellipsis"
   },
@@ -216,7 +234,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     borderBottomWidth: 1,
 
-  }
+  },
   
 
 })

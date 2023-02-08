@@ -26,13 +26,14 @@ const MovieInfo = () => {
           </h1>
         </div>
 
-          {/* wrapping div */}
+        {/* wrapping div */}
+        <div style={styles.movieInfoContent} >
           <div style={styles.movieInfoWrapper}>
             <div style={styles.movieImage}>
               <View style={styles.imagePadding}>
                 <Image
                   source={{ uri: movie.image }}
-                  style={{ width: 400, height: 600 }}
+                  style={{ width: "20vw", height: "30vw" }}
                 />
               </View>
             </div>
@@ -58,8 +59,14 @@ const MovieInfo = () => {
             </div>
           </div>
 
-          
-       
+          <div style={styles.suggestedMovies}>
+            <Text style={styles.movieDetails}>
+            Hello! </Text>
+          </div>
+        </div>
+
+
+
       </View>
     </>
   );
