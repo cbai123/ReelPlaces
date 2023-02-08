@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image, ActivityIndicator } from 'react-native';
-import { Link } from 'react-router-dom';
 import Search from './search';
 import styles from '../styles';
 import {apiKey, googleKey} from "../api/apiKey";

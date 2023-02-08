@@ -1,4 +1,4 @@
-import { Component, useState } from "react"
+import { useState } from "react"
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import GetList from './GetList'
 import {apiKey, googleKey} from "../api/apiKey";
