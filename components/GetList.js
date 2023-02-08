@@ -16,7 +16,7 @@ const GetList = ({ list, isLoading }) => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            <Link to={'/movieinfo'} state={{movie: movie}}> 
+            <Link to={'/movieinfo'} state={{movie: movie, list: firstTen, index: index}}> 
               <Text ><strong>{movie.title} </strong></Text>
               <Text ><strong>{movie.description}</strong></Text>
               <View style={styles.imagePadding}> 

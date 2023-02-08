@@ -182,8 +182,8 @@ const styles = StyleSheet.create({
     lineHeight: "15pt",
     padding: "30px",
     maxWidth: "23vw",
-    // overflow: "hidden",
-    // textOverflow: "ellipsis"
+    overflow: "hidden",
+    textOverflow: "ellipsis"
   },
 
   fontLoader: {

@@ -4,19 +4,25 @@ import { useLocation } from "react-router-dom";
 import Search from "./search";
 import { StatusBar } from "expo-status-bar";
 import styles from "../styles";
+import RelatedMovies from "./relatedMovies";
 const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
   const location = useLocation();
-  const { movie } = location.state;
+  const movie = location.state.movie;
+  const movieList = location.state.list;
+  const movieIndex = location.state.index;
+
   return (
     <>
       <View style={styles.container}>
         <div style={styles.movieNavbar}>
-          <img src={image} style={styles.moviePageLogo} />
+          <a href="/" >
+            <img src={image} style={styles.moviePageLogo} />
+          </a>
           <div style={styles.movieSearch}>
             <Search />
-            {/* <StatusBar style="auto" /> */}
+            <StatusBar style="auto" />
           </div>
         </div>
 
@@ -61,11 +67,10 @@ const MovieInfo = () => {
 
           <div style={styles.suggestedMovies}>
             <Text style={styles.movieDetails}>
-            Hello! </Text>
+              <b> Check out other movies shot in </b> </Text>
+                <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
           </div>
         </div>
-
-
 
       </View>
     </>
