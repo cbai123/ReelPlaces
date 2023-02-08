@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Search from "./search";
 import { StatusBar } from "expo-status-bar";
 import styles from "../styles";
+import GetMap from './GetMap';
 const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
@@ -73,6 +74,8 @@ const MovieInfo = () => {
               </Text>
             </div>
           </div>
+
+          <GetMap/>
 
           
        
