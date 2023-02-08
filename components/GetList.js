@@ -17,13 +17,6 @@ const GetList = ({ list, isLoading }) => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            {/* <Link to={'/movieinfo'} state={{movie: movie}}> 
-              <Text ><strong>{movie.title} </strong></Text>
-              <Text ><strong>{movie.description}</strong></Text>
-              <View style={styles.imagePadding}> 
-                <Image source={{uri: movie.image}} style = {{ width: 200, height: 300 }}/>
-              </View>
-            </Link> */}
             <MovieSummary style={styles.imagePadding} movie={movie} />
           </li>
         </div>

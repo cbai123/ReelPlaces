@@ -15,15 +15,6 @@ export default function App() {
     });
    }, []);
 
-
-  // let element = useRoutes([
-  //   {path: "/", element: <Home/>},
-  //   {path: "/movieinfo", element: <MovieInfo/>},
-  // ]);
-
-  // return element
-
-
   return ( 
     <main>
       <Router>

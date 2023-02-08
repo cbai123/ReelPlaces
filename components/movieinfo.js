@@ -56,9 +56,6 @@ const MovieInfo = () => {
               </Text>
             </div>
           </div>
-
-          
-       
       </View>
     </>
   );
