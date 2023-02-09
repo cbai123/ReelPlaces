@@ -23,10 +23,10 @@ npm install
 npm run start
 ```
 Once all dependencies have been installed:
-:left_pointing_magnifying_glass: Enter the location of your choice 
-:clapper_board: Click on your preferred movie 
-:world_map: Check out the map 
-:round_pushpin: Explore!
+- :left_pointing_magnifying_glass: Enter the location of your choice 
+- :clapper_board: Click on your preferred movie 
+- :world_map: Check out the map 
+- :round_pushpin: Explore!
 
 ## MVP
 We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was being able to search for a location and view the list of movies correlating to that location.
