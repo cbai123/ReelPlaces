@@ -5,7 +5,8 @@ import styles from '../styles';
 import apiKey from '../api/apiKey'
 import MovieSummary from './MovieSummary';
 
-const GetList = ({ list, isLoading }) => {
+const GetList = ({ list, isLoading, location }) => {
+  
 
   const getFirstTen = (data) => {
     if (isLoading) {

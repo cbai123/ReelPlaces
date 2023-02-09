@@ -6,7 +6,7 @@ const MovieSummary = (props) => {
 
   return (
     <>
-      <Link to={'/movieinfo'} state={{movie: movie}}> 
+      <Link to={'/movieinfo'} state={{movie: movie, searchedLocation: location}}> 
         <Text ><strong>{movie.title} </strong></Text>
         <Text ><strong>{movie.description}</strong></Text>
         <View style={props.style}> 
