@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useState } from 'react';
 import { View, Image, Text, ActivityIndicator } from "react-native";
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import { Router, Route, Link, Routes } from 'react-router-dom';
 import styles from "../styles";
 
 const RelatedMovies = ({movieList, movieIndex}) => {
   const firstTen = movieList;
   firstTen.splice(movieIndex, movieIndex);
-  const suggestedList = movieList.slice(0, 3);
+  const suggestedList = movieList.slice(0, 5);
 
   return suggestedList.map((movie, index) => (
 
