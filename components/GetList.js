@@ -19,7 +19,7 @@ const GetList = ({ list, isLoading, location }) => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            <MovieSummary style={styles.imagePadding} movie={movie} location={location}/>
+            <MovieSummary style={styles.imagePadding} movie={movie} location={location} firstTen={firstTen} index={index}/>
           </li>
         </div>
       </Fragment>
