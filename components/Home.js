@@ -28,7 +28,7 @@ const Home = () => {
 
     return (
       <View style={styles.container}>
-        <View>
+        {/* <View> */}
           <div>
             <img src={image} style={styles.logo}/>
           </div>
@@ -39,7 +39,7 @@ const Home = () => {
             <Search hideTrending={hideTrending} setHideTrending={setHideTrending} />
             <StatusBar style="auto" />
           </div>
-        </View>
+        {/* </View> */}
 
         {!hideTrending && (
           <View>
