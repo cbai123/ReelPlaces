@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     // backgroundRepeat: "no-repeat",
     // backgroundAttachment: "fixed",
     minHeight: "100vh",
+    overflow: "hidden"
   },
 
   logo: {
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
 
   },
 
-  suggestedMovies: {
+  suggestedMoviesBox: {
     display: "inline",
     borderColor: "white",
     borderWidth: 2,
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
 
   movieText: {
     flex: "100%",
-    marginLeft: "0%",
+    // marginLeft: "0%",
     lineHeight: "15pt",
     padding: "30px",
     maxWidth: "23vw",
@@ -235,6 +236,22 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
 
   },
+
+  suggestedMoviesText: {
+    flex: "100%",
+    marginBottom: "10%",
+    lineHeight: "15pt",
+    padding: "3px",
+    // maxWidth: "23vw",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+
+  },
+
+  suggestedMoviesImage: {
+    padding: "4px",
+    marginBottom: "5%"
+  }
   
 
 })

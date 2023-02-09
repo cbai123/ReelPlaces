@@ -1,28 +1,27 @@
 import { Fragment, useEffect, useState } from 'react';
 import { View, Image, Text, ActivityIndicator } from "react-native";
-import { useLocation } from "react-router-dom";
-import Search from "./search";
-import { StatusBar } from "expo-status-bar";
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import styles from "../styles";
-import MovieClient from "../api/movieClient";
 
 const RelatedMovies = ({movieList, movieIndex}) => {
-console.log(movieList)
-  movieList.splice(movieIndex, movieIndex);
-  const suggestedList = movieList.slice(0, 5);
+  const firstTen = movieList;
+  firstTen.splice(movieIndex, movieIndex);
+  const suggestedList = movieList.slice(0, 3);
 
   return suggestedList.map((movie, index) => (
 
     <Fragment key={index}>
-      <div data-testid="TitleID" style={styles.column}>
-        <li>
-          <Text ><strong>{movie.title} </strong></Text>
+      <li>
+        <Link to={'/movieinfo'} state={{movie: movie, list: firstTen, index: index}}>
+          <Text style={styles.suggestedMoviesText} >
+            <strong>{movie.title} </strong>
+          </Text>
           {/* <Text ><strong>{movie.description}</strong></Text> */}
-          <View style={styles.imagePadding}> 
+          <View style={styles.suggestedMoviesImage}> 
             <Image source={{uri: movie.image}} style = {{ width: 100, height: 150 }}/>
           </View>
-        </li>
-      </div>
+        </Link>
+      </li>
     </Fragment>
 
   ));

@@ -65,9 +65,9 @@ const MovieInfo = () => {
             </div>
           </div>
 
-          <div style={styles.suggestedMovies}>
+          <div style={styles.suggestedMoviesBox}>
             <Text style={styles.movieDetails}>
-              <b> Check out other movies shot in </b> </Text>
+              <b> Check out other movies shot here! </b> </Text>
                 <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
           </div>
         </div>
