@@ -39,15 +39,15 @@ const MovieInfo = () => {
   return (
     <>
       <View style={styles.container}>
-        <div style={styles.movieNavbar}>
+        {/* <div style={styles.movieNavbar}> */}
           <a href="/" >
-            <img src={image} style={styles.moviePageLogo} />
+            <img src={image} style={styles.logo} />
           </a>
-          <div style={styles.movieSearch}>
-            {/* <Search /> */}
+          {/* <div style={styles.movieSearch}>
+            <Search />
             <StatusBar style="auto" />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
         <div style={styles.movieTitle}>
           <h1 style={styles.fontLoader}>
@@ -62,7 +62,7 @@ const MovieInfo = () => {
               <View style={styles.imagePadding}>
                 <Image
                   source={{ uri: movie.image }}
-                  style={{ width: "20vw", height: "30vw" }}
+                  style={{ width: "15vw", height: "23vw" }}
                 />
               </View>
             </div>
@@ -87,17 +87,23 @@ const MovieInfo = () => {
               </Text>
             </div>
           </div>
-
-          <div style={styles.suggestedMoviesBox}>
-            <Text style={styles.movieDetails}>
-              <b> Check out other movies filmed here! </b> </Text>
-                <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
-          </div>
+          <div style={styles.mapStyling}>
+            {showMap &&
+            <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/>
+            }
+          </div>          
         </div>
-
-          {showMap &&
-          <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/>
-          }
+ 
+          <div style={styles.suggestedMoviesBox}>
+            <div>
+              <Text style={styles.suggestedMovieDetails}>
+                <b> Check out other movies filmed here! </b> 
+              </Text>
+            </div>
+            <div style={styles.suggestedMoviesContainers}>
+              <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
+            </div>  
+          </div>
       </View>
     </>
   );

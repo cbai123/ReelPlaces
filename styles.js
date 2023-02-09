@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     backgroundImage: 'linear-gradient(0, #fffae6, #fffae6, #95e1d3)',
     // backgroundRepeat: "no-repeat",
     // backgroundAttachment: "fixed",
-    minHeight: "100vh",
+    minHeight: "120vh",
+    minWidth: "100vw",
     overflow: "hidden"
   },
 
@@ -146,19 +147,23 @@ const styles = StyleSheet.create({
     marginLeft: "4.5vw",
     marginRight: "4.5vw",
     alignSelf: "flex-start",
-
+    justifyContent: "center",
   },
 
   suggestedMoviesBox: {
-    display: "inline",
+    display: "flex",
+    flexDirection: "column",
     borderColor: "white",
     borderWidth: 2,
-    width: "20vw",
-    marginLeft: "19vw",
+    width: "60vw",
+    // marginLeft: "19vw",
     // alignSelf: "flex-end",
     padding: "10px",
     backgroundColor: "rgb(249, 249, 249, 51%)",
-    boxShadow: "2px 8px 15px #888888"
+    boxShadow: "2px 8px 15px #888888",
+    justifyContent: "space-evenly",
+    marginTop: "110px",
+    marginBottom: "100px"
   },
 
   movieInfoWrapper: {
@@ -169,6 +174,8 @@ const styles = StyleSheet.create({
     padding: "10px",
     backgroundColor: "rgb(249, 249, 249, 51%)",
     boxShadow: "2px 8px 15px #888888",
+    maxHeight: "520px"
+
   },
 
   movieImage: {
@@ -188,7 +195,6 @@ const styles = StyleSheet.create({
 
   fontLoader: {
     fontFamily: 'Roboto',
-
   },
 
   movieNavbar: {
@@ -224,7 +230,7 @@ const styles = StyleSheet.create({
     width: "100%",
     marginLeft: "8.5%",
     marginTop: "8%",
-    fontSize: "25px",
+    fontSize: "18px",
   },
 
   movieDetails: {
@@ -233,7 +239,15 @@ const styles = StyleSheet.create({
     paddingBottom: "5px",
     borderBottomColor: 'black',
     borderBottomWidth: 1,
+  },
 
+  suggestedMovieDetails: {
+    display: "block",
+    marginBottom: "50px",
+    paddingBottom: "5px",
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    textAlign: "center"
   },
 
   suggestedMoviesText: {
@@ -244,13 +258,17 @@ const styles = StyleSheet.create({
     // maxWidth: "23vw",
     overflow: "hidden",
     textOverflow: "ellipsis"
-
   },
 
   suggestedMoviesImage: {
     padding: "4px",
     marginBottom: "5%"
   },
+
+  suggestedMoviesContainers: {
+    display: "flex",
+    justifyContent: "space-evenly"
+  }, 
   
   homeColumn: {
     display: "flex",
@@ -279,7 +297,22 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
-  }
+  },
+
+  mapStyling: {
+    display: "inline",
+    borderColor: "white",
+    borderWidth: 2,
+    width: "700px",
+    height: "500px",
+    marginLeft: "8vw",
+    // alignSelf: "flex-end",
+    padding: "20px",
+    backgroundColor: "rgb(249, 249, 249, 51%)",
+    boxShadow: "2px 8px 15px #888888"
+  },
+
+
 
 })
 

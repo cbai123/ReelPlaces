@@ -49,7 +49,7 @@ const Home = () => {
               <li key={index}>
               <div style={styles.row}>
                 <div style={styles.movieContainer}>
-                  <MovieSummary style={styles.homeImage} movie={movie} />
+                  <MovieSummary style={styles.homeImage} movie={movie} index={index} firstTen={topTen}/>
                 </div>
               </div>
               </li>
