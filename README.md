@@ -23,10 +23,10 @@ npm install
 npm run start
 ```
 Once all dependencies have been installed:
-🔍 Enter the location of your choice 
-🎬 Click on your preferred movie 
-🗺️ Check out the map 
-📍Explore!
+:🔍: Enter the location of your choice 
+:🎬: Click on your preferred movie 
+:🗺️: Check out the map 
+:📍: Explore!
 
 ## MVP
 We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was being able to search for a location and view the list of movies correlating to that location.
