@@ -5,12 +5,15 @@ import Search from "./search";
 import { StatusBar } from "expo-status-bar";
 import styles from "../styles";
 import GetMaps from './GetMap';
+import RelatedMovies from "./relatedMovies";
 const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
   const [locationArray, setLocationArray] = useState([])
   const [showMap, setShowMap] = useState(false)
-  const {movie, searchedLocation} = useLocation().state;
+  const {movie, searchedLocation, list, index} = useLocation().state;
+  const movieList = list
+  const movieIndex = index
   const id = movie.id
 
   useEffect(() => {
@@ -36,50 +39,62 @@ const MovieInfo = () => {
   return (
     <>
       <View style={styles.container}>
-        <div style={styles.navbar}>
-          <img src={image} />
-        </div>
-        <div style={styles.centre}>
-          <Text>Welcome to ReelPlaces!</Text>
-          {/* <Search /> */}
-          <StatusBar style="auto" />
+        <div style={styles.movieNavbar}>
+          <a href="/" >
+            <img src={image} style={styles.moviePageLogo} />
+          </a>
+          <div style={styles.movieSearch}>
+            {/* <Search /> */}
+            <StatusBar style="auto" />
+          </div>
         </div>
 
+        <div style={styles.movieTitle}>
+          <h1 style={styles.fontLoader}>
+              {movie.title} {movie.description}{'\n'}
+          </h1>
+        </div>
 
-          {/* wrapping div */}
+        {/* wrapping div */}
+        <div style={styles.movieInfoContent} >
           <div style={styles.movieInfoWrapper}>
             <div style={styles.movieImage}>
               <View style={styles.imagePadding}>
                 <Image
                   source={{ uri: movie.image }}
-                  style={{ width: 200, height: 300 }}
+                  style={{ width: "20vw", height: "30vw" }}
                 />
               </View>
             </div>
 
             {/* text */}
             <div style={styles.movieText}>
-              <h2 style={styles.fontLoader}>
-                <strong>{movie.title}{'\n'}</strong>
-              </h2>
 
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Release year:</strong> {movie.description}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Plot:</strong> {movie.plot}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Runtime:</strong> {movie.runtimeStr}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>Stars:</strong> {movie.stars}{'\n'}
               </Text>
-              <Text>
+              <Text style={styles.movieDetails}>
                 <strong>IMDb Rating:</strong> {movie.imDbRating}{'\n'}
               </Text>
             </div>
           </div>
+
+          <div style={styles.suggestedMoviesBox}>
+            <Text style={styles.movieDetails}>
+              <b> Check out other movies filmed here! </b> </Text>
+                <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
+          </div>
+        </div>
+
           {showMap &&
           <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/>
           }
