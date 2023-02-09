@@ -9,6 +9,7 @@ const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
   const [locationArray, setLocationArray] = useState([])
+  const [showMap, setShowMap] = useState(false)
   const {movie, searchedLocation} = useLocation().state;
   const id = movie.id
 
@@ -17,12 +18,15 @@ const MovieInfo = () => {
       const url = `http://localhost:3000/api/getOne/${id}`
       const response = await fetch(url)
       const data = await response.json()
-      const result = data.locations
-      if (searchedLocation) {
-        const filteredArray = result.filter(location => location.includes(searchedLocation.label.split(', ')[0]))
-        setLocationArray(filteredArray)
-      } else {
-        setLocationArray(result)
+      if(data) {
+        const result = data.locations
+        setShowMap(true)
+        if (searchedLocation) {
+          const filteredArray = result.filter(location => location.includes(searchedLocation.label.split(', ')[0]))
+          setLocationArray(filteredArray)
+        } else {
+          setLocationArray(result)
+        }
       }
     }
 
@@ -76,9 +80,9 @@ const MovieInfo = () => {
               </Text>
             </div>
           </div>
-
+          {showMap &&
           <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/>
-       
+          }
       </View>
     </>
   );

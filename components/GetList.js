@@ -7,6 +7,7 @@ import MovieSummary from './MovieSummary';
 
 const GetList = ({ list, isLoading, location }) => {
   
+  console.log(location)
 
   const getFirstTen = (data) => {
     if (isLoading) {
@@ -18,7 +19,7 @@ const GetList = ({ list, isLoading, location }) => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            <MovieSummary style={styles.imagePadding} movie={movie} />
+            <MovieSummary style={styles.imagePadding} movie={movie} location={location}/>
           </li>
         </div>
       </Fragment>
