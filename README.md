@@ -2,7 +2,7 @@
 
 Have you ever been curious to see where your favourite movies or TV series have been filmed?
 
-ReelPlaces allows you to search for the location you are currently at using a dropdown menu, and shows you the top 12 movies that were filmed there. Those movies then give you further information such as, the release year, plot, stars and IMDb rating. With ReelPlaces, you can get access to a map which pinpoints the nearby filming locations and then you are ready to go and explore them!
+ReelPlaces allows you to search for the location you are currently at using a dropdown menu, and shows you the top 20 movies that were filmed there. Those movies then give you further information such as, the release year, plot, stars and IMDb rating. With ReelPlaces, you can get access to a map which pinpoints the nearby filming locations and then you are ready to go and explore them!
 
 ## How to use ReelPlaces
 ### Install 
@@ -11,7 +11,12 @@ ReelPlaces allows you to search for the location you are currently at using a dr
 git clone https://github.com/cbai123/ReelPlaces
 ```
 
-2. Go into the relevant directory by doing the below which will install dependencies needed to run it accurately. You will need two terminals open. One of them needs to do the below:
+2. Once cloned, visit this website and sign up to get your own api key in order to run the programme:
+```bash
+https://imdb-api.com/
+```
+
+3. Go into the relevant directory by doing the below which will install dependencies needed to run it accurately. You will need two terminals open. One of them needs to do the below:
 ```bash
 cd database
 npm install
@@ -36,14 +41,24 @@ For our MVP, we would like our app to acheive the following user stories:
 ```
 As a user,
 So I can search for the location, 
-It should have a home page.  
+It should have a home page with a search bar.  
 ```
-
 ```
 As a user,
 So I can see the movies,
 It should be able to show up on the home page.
 ```
+```
+As a user,
+So I can see the movies information,
+It should be able to show up on the movie info page.
+```
+```
+As a user,
+So I can see where it is filmed,
+It should include a map.
+```
+
 As we completed the above, we started to build our product up feature by feature till we ended up with something we were all proud of.
 
 ## Tech Stack
@@ -56,7 +71,6 @@ For this project we are using:
 - [Node](https://nodejs.org/en/) for the back-end.
 - [Jest](https://jestjs.io/) for testing.
 - [Mongoose](https://mongoosejs.com) to model objects in MongoDB.
-- [ESLint](https://eslint.org) for linting.
 - [Prettier](https://prettier.io/) for formatting.
 
 ## Contributors
