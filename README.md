@@ -59,7 +59,7 @@ So I can see where it is filmed,
 It should include a map.
 ```
 
-As we completed the above, we started to build our product up feature by feature till we ended up with something we were all proud of.
+As we completed the above, we started to build our product up feature by feature until we ended up with an app we were all proud of.
 
 ## Tech Stack
 
