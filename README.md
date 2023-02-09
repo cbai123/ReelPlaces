@@ -8,10 +8,10 @@ ReelPlaces allows you to search for the location you are currently at using a dr
 ### Install 
 1. Clone this repository by running the below in your terminal:
 ```bash
-git clone 
+git clone https://github.com/cbai123/ReelPlaces
 ```
 
-2. Go into the relevant directory by doing the below which will install dependencies needed to run it accurately: You will need two terminals open. One of them needs to do the below:
+2. Go into the relevant directory by doing the below which will install dependencies needed to run it accurately. You will need two terminals open. One of them needs to do the below:
 ```bash
 cd database
 npm install
@@ -22,11 +22,11 @@ cd ReelPlaces
 npm install 
 npm run start
 ```
-- Once all dependencies have been installed:
-- Enter the location of your choice 
-- Click on your preferred movie 
-- Check out the map 
-- Explore!
+Once all dependencies have been installed:
+🔍 Enter the location of your choice 
+🎬 Click on your preferred movie 
+🗺️ Check out the map 
+📍Explore!
 
 ## MVP
 We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was being able to search for a location and view the list of movies correlating to that location.
