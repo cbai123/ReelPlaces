@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
 
   welcomeText: {
-    fontSize: 'x-large',
+    fontSize: 'xx-large',
   },
 
   searchForm: {
@@ -39,14 +39,14 @@ const styles = StyleSheet.create({
 
   submitBtn: {
     borderRadius: '20px',
-    border: '3px solid #95e1d3',
+    border: '2px solid black',
     backgroundColor: 'lightcyan',
     color: 'black',
     width: '70px',
     height: '25px',
   },
 
-  centre: {
+  centre: { 
     padding: '100px',
     display: 'flex',
     flexDirection: 'column',
@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
     padding: "5px",
   },
   
-  /* Clear floats after image containers */
   row: {
     display: "flex",
     flexWrap: "wrap",
@@ -251,8 +250,36 @@ const styles = StyleSheet.create({
   suggestedMoviesImage: {
     padding: "4px",
     marginBottom: "5%"
-  }
+  },
   
+  homeColumn: {
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "25%",
+    padding: "15px"
+  },
+
+  homeImage: {
+    padding: "4px",
+    marginTop: "10px",
+    // marginBottom: "20px",
+    display: "flex",
+    flexWrap: "wrap",
+    flex: "33.33%"
+  },
+
+  homeTitle: {
+    margin: "auto",
+    width: "30%",
+    fontSize: 'xx-large',
+    paddingBottom: "50px"
+  },
+
+  movieContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
 
 })
 
