@@ -3,6 +3,7 @@ import { View, Image, Text, ActivityIndicator } from 'react-native';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import styles from '../styles';
 import apiKey from '../api/apiKey'
+import MovieSummary from './MovieSummary';
 
 const GetList = ({ list, isLoading, location }) => {
   
@@ -17,13 +18,7 @@ const GetList = ({ list, isLoading, location }) => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            <Link to={'/movieinfo'} state={{movie: movie, searchedLocation: location}}> 
-              <Text ><strong>{movie.title} </strong></Text>
-              <Text ><strong>{movie.description}</strong></Text>
-              <View style={styles.imagePadding}> 
-                <Image source={{uri: movie.image}} style = {{ width: 200, height: 300 }}/>
-              </View>
-            </Link>
+            <MovieSummary style={styles.imagePadding} movie={movie} />
           </li>
         </div>
       </Fragment>
