@@ -4,28 +4,31 @@ import { useLocation } from "react-router-dom";
 import Search from "./search";
 import { StatusBar } from "expo-status-bar";
 import styles from "../styles";
+import GetMaps from './GetMap';
 const image = require("../assets/reelplaces.png");
 
 const MovieInfo = () => {
   const [locationArray, setLocationArray] = useState([])
-  const location = useLocation();
-  const { movie } = location.state;
+  const {movie, searchedLocation} = useLocation().state;
   const id = movie.id
 
   useEffect(() => {
     async function getLocations() {
       const url = `http://localhost:3000/api/getOne/${id}`
       const response = await fetch(url)
-      console.log(response)
       const data = await response.json()
-
-      setLocationArray(data.locations)
-      console.log(data.locations)
+      const result = data.locations
+      if (searchedLocation) {
+        const filteredArray = result.filter(location => location.includes(searchedLocation.label.split(', ')[0]))
+        setLocationArray(filteredArray)
+      } else {
+        setLocationArray(result)
+      }
     }
 
     getLocations()
   }, [])
-  
+
   return (
     <>
       <View style={styles.container}>
@@ -34,7 +37,7 @@ const MovieInfo = () => {
         </div>
         <div style={styles.centre}>
           <Text>Welcome to ReelPlaces!</Text>
-          <Search />
+          {/* <Search /> */}
           <StatusBar style="auto" />
         </div>
 
@@ -74,7 +77,7 @@ const MovieInfo = () => {
             </div>
           </div>
 
-          
+          <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/>
        
       </View>
     </>

@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.2",
+    "@react-google-maps/api": "^2.18.1",
     "@testing-library/jest-dom": "^5.16.5",
     "babel-jest": "^29.4.1",
     "expo": "~47.0.12",

@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import styles from '../styles';
 import apiKey from '../api/apiKey'
 
-const GetList = ({ list, isLoading }) => {
+const GetList = ({ list, isLoading, location }) => {
   
 
   const getFirstTen = (data) => {
@@ -17,7 +17,7 @@ const GetList = ({ list, isLoading }) => {
       <Fragment key={index}>
         <div data-testid="TitleID" style={styles.column}>
           <li>
-            <Link to={'/movieinfo'} state={{movie: movie}}> 
+            <Link to={'/movieinfo'} state={{movie: movie, searchedLocation: location}}> 
               <Text ><strong>{movie.title} </strong></Text>
               <Text ><strong>{movie.description}</strong></Text>
               <View style={styles.imagePadding}> 
