@@ -88,8 +88,9 @@ const MovieInfo = () => {
             </div>
           </div>
           <div style={styles.mapStyling}>
-            {showMap &&
-            <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/>
+            {showMap ?
+            <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/> :
+            <Text style={styles.mapError}> Sorry! Filming location unavailable</Text>
             }
           </div>          
         </div>

@@ -272,6 +272,7 @@ const styles = StyleSheet.create({
   
   homeColumn: {
     display: "flex",
+    justifyContent: "center",
     flexWrap: "wrap",
     flex: "25%",
     padding: "15px"
@@ -303,7 +304,7 @@ const styles = StyleSheet.create({
     display: "inline",
     borderColor: "white",
     borderWidth: 2,
-    width: "700px",
+    width: "600px",
     height: "500px",
     marginLeft: "8vw",
     // alignSelf: "flex-end",
@@ -312,7 +313,9 @@ const styles = StyleSheet.create({
     boxShadow: "2px 8px 15px #888888"
   },
 
-
+  mapError: {
+    fontSize: "large"
+  }
 
 })
 

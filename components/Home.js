@@ -16,7 +16,7 @@ const Home = () => {
     fetch(`https://imdb-api.com/en/API/InTheaters/${apiKey}`)
     .then((res) => res.json())
     .then((result) => {
-      setTrending(result.items.slice(0, 16));
+      setTrending(result.items.slice(0, 12));
     });
   }, []);
 
@@ -27,8 +27,8 @@ const Home = () => {
     const topTen = data;
 
     return (
-      <View>
-        <View style={styles.container}>
+      <View style={styles.container}>
+        <View>
           <div>
             <img src={image} style={styles.logo}/>
           </div>
