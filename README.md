@@ -23,8 +23,8 @@ npm install
 npm run start
 ```
 Once all dependencies have been installed:
-- :left_pointing_magnifying_glass: Enter the location of your choice 
-- :clapper_board: Click on your preferred movie 
+- :mag_right: Enter the location of your choice 
+- :movie_camera: Click on your preferred movie 
 - :world_map: Check out the map 
 - :round_pushpin: Explore!
 
