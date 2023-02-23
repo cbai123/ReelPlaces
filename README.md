@@ -3,7 +3,7 @@
 Have you ever been curious to see where your favourite movies or TV series have been filmed?
 
 ReelPlaces allows you to search for the location you are currently at using a dropdown menu, and shows you the top 20 movies that were filmed there. Those movies then give you further information such as, the release year, plot, stars and IMDb rating. With ReelPlaces, you can get access to a map which pinpoints the nearby filming locations and then you are ready to go and explore them!
-
+<!---
 ## How to use ReelPlaces
 ### Install 
 1. Clone this repository by running the below in your terminal:
@@ -32,7 +32,7 @@ Once all dependencies have been installed:
 - :movie_camera:  Click on your preferred movie 
 - :world_map:  Check out the map 
 - :round_pushpin:  Explore!
-
+-->
 ## MVP
 We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was being able to search for a location and view the list of movies correlating to that location.
 
