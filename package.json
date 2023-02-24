@@ -6,12 +6,12 @@
     "node": "16.19.0"
   },
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --web",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest",
-    "build": "npx expo export:web"
+    // "build": "npx expo export:web"
   },
   "jest": {
     "preset": "jest-expo",
