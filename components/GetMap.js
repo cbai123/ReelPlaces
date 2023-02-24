@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-import { googleKey } from '../api/apiKey';
+import { GOOGLE_KEY } from '@env'
 
 const containerStyle = {
   width: '600px',
@@ -16,7 +16,7 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
 
     async function getCenterLatLng() {
       // Get the latitude and longitude for the center of the map
-      const centerUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchedLocation.label}&key=${googleKey}`
+      const centerUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchedLocation.label}&key=${GOOGLE_KEY}`
       const centerResponse = await fetch(centerUrl)
       const centerResult = await centerResponse.json()
       const centerLatLng = centerResult.results[0].geometry.location
@@ -26,7 +26,7 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
     async function getLatLng() {
       // Get the latitude and longitude for the markers
       locationArray.forEach( async (location) => {
-        const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${googleKey}`
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${GOOGLE_KEY}`
         const response = await fetch(url)
         const result = await response.json()
         const latLng = result.results[0].geometry.location
@@ -40,7 +40,7 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: googleKey
+    googleMapsApiKey: GOOGLE_KEY
   })
 
   return isLoaded ? (

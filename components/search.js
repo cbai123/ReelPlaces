@@ -1,7 +1,7 @@
 import { useState } from "react"
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import GetList from './GetList'
-import { googleKey } from "../api/apiKey";
+import { GOOGLE_KEY } from '@env'
 import styles from "../styles";
 
 const Search = (props) => {
@@ -30,13 +30,13 @@ const Search = (props) => {
   };
 
   const hideView= () => {
-    props.setHideTrending(!props.hideTrending)
+    props.setHideTrending(true)
   };
   
   return(
     <>
       <GooglePlacesAutocomplete
-        apiKey = {googleKey}
+        apiKey = {GOOGLE_KEY}
         selectProps={{
           placeholder: 'Enter a location...',
           styles: {
