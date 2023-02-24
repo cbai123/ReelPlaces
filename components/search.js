@@ -1,7 +1,7 @@
 import { useState } from "react"
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import GetList from './GetList'
-import { GOOGLE_KEY } from '@env'
+import { GOOGLE_KEY, DATABASE_URL } from '@env'
 import styles from "../styles";
 
 const Search = (props) => {
@@ -20,7 +20,7 @@ const Search = (props) => {
       const formattedLocation = `${locationArray[0]}, ${locationArray[locationArray.length-1]}`
       console.log('hello')
 
-      fetch(`http://localhost:3000/api/imdb/byLocation/${formattedLocation}`)
+      fetch(`${DATABASE_URL}api/imdb/byLocation/${formattedLocation}`)
       .then((res) => res.json())
       .then((data) => {
         setList(data.results)

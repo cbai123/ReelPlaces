@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Image, Text } from "react-native";
 import { useLocation } from "react-router-dom";
+import { DATABASE_URL } from '@env'
 import styles from "../styles";
 import GetMaps from './GetMap';
 import RelatedMovies from "./relatedMovies";
@@ -16,7 +17,7 @@ const MovieInfo = () => {
 
   useEffect(() => {
     async function getLocations() {
-      const url = `http://localhost:3000/api/getOne/${id}`
+      const url = `${DATABASE_URL}api/getOne/${id}`
       const response = await fetch(url)
       const data = await response.json()
       if(data) {

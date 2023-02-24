@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Text, View, ActivityIndicator } from 'react-native';
+import { DATABASE_URL } from '@env'
 import Search from './search';
 import styles from '../styles';
 import MovieSummary from './MovieSummary';
@@ -12,7 +13,7 @@ const Home = () => {
   const isLoading = trending == undefined
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/imdb/trending`)
+    fetch(`${DATABASE_URL}api/imdb/trending`)
     .then((res) => res.json())
     .then((result) => {
       setTrending(result.items);
