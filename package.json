@@ -2,6 +2,9 @@
   "name": "reelplaces",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "16.19.0"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
