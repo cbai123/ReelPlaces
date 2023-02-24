@@ -11,7 +11,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest",
-    "build": "expo build:web"
+    "build": "npx expo export:web"
   },
   "jest": {
     "preset": "jest-expo",
