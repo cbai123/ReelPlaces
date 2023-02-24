@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { View, Image, Text } from "react-native";
 import { useLocation } from "react-router-dom";
-import Search from "./search";
-import { StatusBar } from "expo-status-bar";
 import styles from "../styles";
 import GetMaps from './GetMap';
 import RelatedMovies from "./relatedMovies";

@@ -2,8 +2,6 @@ import { View, Image, Text } from "react-native";
 import { Link } from 'react-router-dom';
 
 const MovieSummary = ({style, movie, location, firstTen, index}) => {
-  // const movie = props.movie
-  // const location = props.location
 
   return (
     <>
