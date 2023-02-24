@@ -1,7 +1,7 @@
 import { useState } from "react"
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import GetList from './GetList'
-import {apiKey, googleKey} from "../api/apiKey";
+import { googleKey } from "../api/apiKey";
 import styles from "../styles";
 
 const Search = (props) => {
@@ -18,13 +18,14 @@ const Search = (props) => {
       setIsLoading(true)
       const locationArray = location.label.split(', ')
       const formattedLocation = `${locationArray[0]}, ${locationArray[locationArray.length-1]}`
+      console.log('hello')
 
-      fetch(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?has=locations&locations=${formattedLocation}`)
+      fetch(`http://localhost:3000/api/imdb/byLocation/${formattedLocation}`)
       .then((res) => res.json())
       .then((data) => {
-        setList(data.results);
-        setIsLoading(false);
-      });
+        setList(data.results)
+        setIsLoading(false)
+      })
     }
   };
 

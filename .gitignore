@@ -12,5 +12,5 @@ web-build/
 
 # macOS
 .DS_Store
-apiKey.js
-*/.env
+api
+*.env

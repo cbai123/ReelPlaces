@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from 'react';
-import { View, Image, Text, ActivityIndicator } from "react-native";
+import { useEffect, useState } from 'react';
+import { View, Image, Text } from "react-native";
 import { useLocation } from "react-router-dom";
 import Search from "./search";
 import { StatusBar } from "expo-status-bar";
@@ -39,15 +39,9 @@ const MovieInfo = () => {
   return (
     <>
       <View style={styles.container}>
-        {/* <div style={styles.movieNavbar}> */}
           <a href="/" >
             <img src={image} style={styles.logo} />
           </a>
-          {/* <div style={styles.movieSearch}>
-            <Search />
-            <StatusBar style="auto" />
-          </div> */}
-        {/* </div> */}
 
         <div style={styles.movieTitle}>
           <h1 style={styles.fontLoader}>

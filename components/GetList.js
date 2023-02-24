@@ -1,8 +1,6 @@
-import { Fragment, useEffect, useState } from 'react';
-import { View, Image, Text, ActivityIndicator } from 'react-native';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import { Fragment } from 'react';
+import { ActivityIndicator } from 'react-native';
 import styles from '../styles';
-import apiKey from '../api/apiKey'
 import MovieSummary from './MovieSummary';
 
 const GetList = ({ list, isLoading, location }) => {
@@ -13,7 +11,7 @@ const GetList = ({ list, isLoading, location }) => {
     if (isLoading) {
       return <ActivityIndicator size="large" />;
     }
-    const firstTen = data.slice(0, 20);
+    const firstTen = data.slice(0, 12);
     return firstTen.map((movie, index) => (
 
       <Fragment key={index}>

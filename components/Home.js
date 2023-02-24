@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { Text, View, Image, ActivityIndicator } from 'react-native';
+import { Text, View, ActivityIndicator } from 'react-native';
 import Search from './search';
 import styles from '../styles';
-import {apiKey, googleKey} from "../api/apiKey";
 import MovieSummary from './MovieSummary';
 const image = require('../assets/reelplaces.png')
 
@@ -13,10 +12,10 @@ const Home = () => {
   const isLoading = trending == undefined
 
   useEffect(() => {
-    fetch(`https://imdb-api.com/en/API/InTheaters/${apiKey}`)
+    fetch(`http://localhost:3000/api/imdb/trending`)
     .then((res) => res.json())
     .then((result) => {
-      setTrending(result.items.slice(0, 12));
+      setTrending(result.items);
     });
   }, []);
 
@@ -24,11 +23,10 @@ const Home = () => {
     if (isLoading) {
       return <ActivityIndicator size="large" />
     }
-    const topTen = data;
+    const topTen = data.slice(0,10);
 
     return (
       <View style={styles.container}>
-        {/* <View> */}
           <div>
             <img src={image} style={styles.logo}/>
           </div>
@@ -39,7 +37,6 @@ const Home = () => {
             <Search hideTrending={hideTrending} setHideTrending={setHideTrending} />
             <StatusBar style="auto" />
           </div>
-        {/* </View> */}
 
         {!hideTrending && (
           <View>
@@ -56,7 +53,7 @@ const Home = () => {
             ))}
           </div>
           </View>
-        )};
+        )}
       </View>
     );
   };
