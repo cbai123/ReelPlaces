@@ -10,8 +10,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest",
-    // "build": "npx expo export:web"
+    "test": "jest"
   },
   "jest": {
     "preset": "jest-expo",
