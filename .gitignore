@@ -14,5 +14,3 @@ web-build/
 .DS_Store
 apiKey.js
 */.env
-
-*/.env
