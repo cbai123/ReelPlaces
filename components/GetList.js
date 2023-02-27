@@ -4,8 +4,6 @@ import styles from '../styles';
 import MovieSummary from './MovieSummary';
 
 const GetList = ({ list, isLoading, location }) => {
-  
-  console.log(location)
 
   const getFirstTen = (data) => {
     if (isLoading) {

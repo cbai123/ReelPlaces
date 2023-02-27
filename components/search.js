@@ -18,7 +18,6 @@ const Search = (props) => {
       setIsLoading(true)
       const locationArray = location.label.split(', ')
       const formattedLocation = `${locationArray[0]}, ${locationArray[locationArray.length-1]}`
-      console.log('hello')
 
       fetch(`${DATABASE_URL}api/imdb/byLocation/${formattedLocation}`)
       .then((res) => res.json())
