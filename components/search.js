@@ -56,7 +56,7 @@ const Search = (props) => {
           types: ['(cities)']
         }}
       />
-      <input style={styles.submitBtn} type="submit" data-testid="submitBtn" onClick={ (e) => { submit(e); hideView(); }}/>
+      <input style={styles.submitBtn} type="submit" value="Submit" data-testid="submitBtn" onClick={ (e) => { submit(e); hideView(); }}/>
       {resultsVisible && <div style={styles.row}>
         <GetList list={list} isLoading={isLoading} location = {location}/>
       </div>}
