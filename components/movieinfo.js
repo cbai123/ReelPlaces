@@ -16,7 +16,6 @@ const MovieInfo = () => {
   const id = movie.id
 
   useEffect(() => {
-    console.log(id)
     async function getLocations() {
       const url = `${DATABASE_URL}api/getOne/${id}`
       const response = await fetch(url)
@@ -34,7 +33,6 @@ const MovieInfo = () => {
         setShowMap(false)
       }
     }
-    console.log('hey')
     getLocations()
   }, [id])
 
