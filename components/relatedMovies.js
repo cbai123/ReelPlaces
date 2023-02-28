@@ -3,7 +3,7 @@ import { View, Image, Text } from "react-native";
 import { Link } from 'react-router-dom';
 import styles from "../styles";
 
-const RelatedMovies = ({movieList, movieIndex}) => {
+const RelatedMovies = ({movieList, movieIndex, searchedLocation}) => {
   const firstTen = movieList;
   firstTen.splice(movieIndex, movieIndex);
   const suggestedList = movieList.slice(0, 5);
@@ -12,7 +12,7 @@ const RelatedMovies = ({movieList, movieIndex}) => {
 
     <Fragment key={index}>
       <li>
-        <Link to={'/movieinfo'} state={{movie: movie, list: firstTen, index: index}}>
+        <Link to={'/movieinfo'} state={{movie: movie, searchedLocation: searchedLocation, list: firstTen, index: index}}>
           <Text style={styles.suggestedMoviesText} >
             <strong>{movie.title} </strong>
           </Text>

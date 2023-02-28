@@ -29,11 +29,12 @@ const MovieInfo = () => {
         } else {
           setLocationArray(result)
         }
+      } else {
+        setShowMap(false)
       }
     }
-
     getLocations()
-  }, [])
+  }, [id])
 
   return (
     <>
@@ -95,7 +96,7 @@ const MovieInfo = () => {
               </Text>
             </div>
             <div style={styles.suggestedMoviesContainers}>
-              <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
+              <RelatedMovies movieList={movieList} movieIndex={movieIndex} searchedLocation={searchedLocation} />
             </div>  
           </div>
       </View>

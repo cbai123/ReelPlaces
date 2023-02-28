@@ -13,13 +13,13 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
   const [center, setCenter] = useState({})
 
   useEffect(() => {
-
+    setLatLngArr([])
     async function getCenterLatLng() {
       // Get the latitude and longitude for the center of the map
       const centerUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchedLocation.label}&key=${GOOGLE_KEY}`
       const centerResponse = await fetch(centerUrl)
       const centerResult = await centerResponse.json()
-      const centerLatLng = centerResult.results[0].geometry.location
+      const centerLatLng = await centerResult.results[0].geometry.location
       setCenter(centerLatLng)
     }
 
@@ -29,7 +29,7 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
         const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${GOOGLE_KEY}`
         const response = await fetch(url)
         const result = await response.json()
-        const latLng = result.results[0].geometry.location
+        const latLng = await result.results[0].geometry.location
         setLatLngArr(oldArray => [...oldArray, latLng])
       })
     }
