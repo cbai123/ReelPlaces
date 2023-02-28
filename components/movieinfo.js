@@ -16,6 +16,7 @@ const MovieInfo = () => {
   const id = movie.id
 
   useEffect(() => {
+    console.log(id)
     async function getLocations() {
       const url = `${DATABASE_URL}api/getOne/${id}`
       const response = await fetch(url)
@@ -29,11 +30,13 @@ const MovieInfo = () => {
         } else {
           setLocationArray(result)
         }
+      } else {
+        setShowMap(false)
       }
     }
-
+    console.log('hey')
     getLocations()
-  }, [])
+  }, [id])
 
   return (
     <>
@@ -95,7 +98,7 @@ const MovieInfo = () => {
               </Text>
             </div>
             <div style={styles.suggestedMoviesContainers}>
-              <RelatedMovies movieList={movieList} movieIndex={movieIndex} />
+              <RelatedMovies movieList={movieList} movieIndex={movieIndex} searchedLocation={searchedLocation} />
             </div>  
           </div>
       </View>
