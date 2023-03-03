@@ -47,7 +47,7 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={12}
+        zoom={11}
       >
 
         {latLngArr.map((latLng, index) => {
