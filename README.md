@@ -15,7 +15,7 @@ ReelPlaces allows you to search for the location you are currently at using a dr
 ## MVP
 We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was being able to search for a location and view the list of movies correlating to that location.
 
-For our MVP, we would like our app to acheive the following user stories:
+For our MVP, we would like our app to achieve the following user stories:
 
 ```
 As a user,
