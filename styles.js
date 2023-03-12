@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   //   padding: "4px"
   // },
 
-  movieInfoContent: {
+  movieInfoWrapper: {
     display: "flex",
     marginLeft: "4.5vw",
     marginRight: "4.5vw",
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     marginBottom: "100px"
   },
 
-  movieInfoWrapper: {
+  movieInfoContent: {
     display: "flex",
     // flexDirection: "row",
     // width: "100%",

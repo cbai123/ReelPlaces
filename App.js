@@ -12,7 +12,7 @@ export default function App() {
         families: ['Roboto']
       }
     });
-   }, []);
+  }, []);
 
   return ( 
     <main>

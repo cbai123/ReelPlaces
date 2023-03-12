@@ -17,7 +17,6 @@ describe("<GetList/>", () => {
     );
     render(<GetList />);
     expect(fetch).toHaveBeenCalledTimes(1);
-    const firstTitle = await screen.findByTestId("TitleID");
     expect(screen.getByText("Title")).toBeInTheDocument();
   });
 

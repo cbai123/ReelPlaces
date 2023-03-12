@@ -11,20 +11,30 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
 
   const [latLngArr, setLatLngArr] = useState([]) 
   const [center, setCenter] = useState({})
+  const [zoom, setZoom] = useState(11)
 
+  // Every time locationArray and searchedLocation update re-requests lat and long coordinates from Google API
   useEffect(() => {
+    // Resets array so doesn't carry over locations if movie has changed
     setLatLngArr([])
+
+    // Gets lat and long of searched location (e.g. London) to centre the map. If no searchedLocation then centres on (0,0) and zooms out.
     async function getCenterLatLng() {
-      // Get the latitude and longitude for the center of the map
-      const centerUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchedLocation.label}&key=${GOOGLE_KEY}`
-      const centerResponse = await fetch(centerUrl)
-      const centerResult = await centerResponse.json()
-      const centerLatLng = await centerResult.results[0].geometry.location
-      setCenter(centerLatLng)
+      if (searchedLocation) {
+        const centerUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchedLocation.label}&key=${GOOGLE_KEY}`
+        const centerResponse = await fetch(centerUrl)
+        const centerResult = await centerResponse.json()
+        const centerLatLng = await centerResult.results[0].geometry.location
+        setCenter(centerLatLng)
+        setZoom(11)
+      } else {
+        setCenter({'lat': 0, 'lng': 0})
+        setZoom(1)
+      }     
     }
 
+    // Iterates over the filming locations to get lat and long for each location, for the markers.
     async function getLatLng() {
-      // Get the latitude and longitude for the markers
       locationArray.forEach( async (location) => {
         const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${GOOGLE_KEY}`
         const response = await fetch(url)
@@ -47,7 +57,7 @@ const GetMaps = ({ locationArray, searchedLocation }) => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={11}
+        zoom={zoom}
       >
 
         {latLngArr.map((latLng, index) => {

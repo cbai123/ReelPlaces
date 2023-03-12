@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Text, View, ActivityIndicator } from 'react-native';
-import { DATABASE_URL } from '@env'
+import { BACKEND_URL } from '@env'
 import Search from './search';
 import styles from '../styles';
 import MovieSummary from './MovieSummary';
@@ -12,15 +12,17 @@ const Home = () => {
   const [hideTrending, setHideTrending] = useState(false);
   const isLoading = trending == undefined
 
+  // Fetches a list of trending movies from the IMDB API
   useEffect(() => {
-    fetch(`${DATABASE_URL}api/imdb/trending`)
+    fetch(`${BACKEND_URL}api/imdb/trending`)
     .then((res) => res.json())
     .then((result) => {
       setTrending(result.items);
     });
   }, []);
 
-  const getTopFilms = (data) => {
+  // Returns the HTML for the homepage. Contains the search bar component and takes in a list of movies as an argument to display as trending.
+  const displayHomePage = (data) => {
     if (isLoading) {
       return <ActivityIndicator size="large" />
     }
@@ -28,6 +30,7 @@ const Home = () => {
 
     return (
       <View style={styles.container}>
+        {/* Sets the logo, title, and search bar */}
           <div>
             <img src={image} style={styles.logo}/>
           </div>
@@ -36,9 +39,9 @@ const Home = () => {
               <Text style={styles.welcomeText}>WELCOME TO REELPLACES!</Text>
             </div>
             <Search hideTrending={hideTrending} setHideTrending={setHideTrending} />
-            <StatusBar style="auto" />
           </div>
 
+        {/* Iterates over the list of trending movies to display them, until the search submit button is clicked. */}
         {!hideTrending && (
           <View>
           <Text style={styles.homeTitle}>  This weeks trending movies! </Text>
@@ -59,7 +62,7 @@ const Home = () => {
     );
   };
 
-  return getTopFilms(trending)
+  return displayHomePage(trending)
 };
 
 export default Home

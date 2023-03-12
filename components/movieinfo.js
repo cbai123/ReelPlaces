@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Image, Text } from "react-native";
 import { useLocation } from "react-router-dom";
-import { DATABASE_URL } from '@env'
+import { BACKEND_URL } from '@env'
 import styles from "../styles";
 import GetMaps from './GetMap';
 import RelatedMovies from "./relatedMovies";
@@ -15,12 +15,14 @@ const MovieInfo = () => {
   const movieIndex = index
   const id = movie.id
 
+  // Sends a request to the database for the locations attached to a movie id. Reruns whenever the movie id updates. 
+  // Returns an array of the locations, can be filtered by the search term.
   useEffect(() => {
     async function getLocations() {
-      const url = `${DATABASE_URL}api/getOne/${id}`
+      const url = `${BACKEND_URL}api/getOne/${id}`
       const response = await fetch(url)
       const data = await response.json()
-      if(data) {
+      if(response.status === 200) {
         const result = data.locations
         setShowMap(true)
         if (searchedLocation) {
@@ -49,9 +51,9 @@ const MovieInfo = () => {
           </h1>
         </div>
 
-        {/* wrapping div */}
-        <div style={styles.movieInfoContent} >
-          <div style={styles.movieInfoWrapper}>
+        {/* div wraps movie info and map */}
+        <div style={styles.movieInfoWrapper} >
+          <div style={styles.movieInfoContent}>
             <div style={styles.movieImage}>
               <View style={styles.imagePadding}>
                 <Image
@@ -61,7 +63,7 @@ const MovieInfo = () => {
               </View>
             </div>
 
-            {/* text */}
+            {/* movie info */}
             <div style={styles.movieText}>
 
               <Text style={styles.movieDetails}>
@@ -81,6 +83,8 @@ const MovieInfo = () => {
               </Text>
             </div>
           </div>
+
+          {/* Map */}
           <div style={styles.mapStyling}>
             {showMap ?
             <GetMaps locationArray={locationArray} searchedLocation={searchedLocation}/> :
@@ -88,17 +92,18 @@ const MovieInfo = () => {
             }
           </div>          
         </div>
- 
-          <div style={styles.suggestedMoviesBox}>
-            <div>
-              <Text style={styles.suggestedMovieDetails}>
-                <b> Check out other movies filmed here! </b> 
-              </Text>
-            </div>
-            <div style={styles.suggestedMoviesContainers}>
-              <RelatedMovies movieList={movieList} movieIndex={movieIndex} searchedLocation={searchedLocation} />
-            </div>  
+            
+        {/* div wraps suggested movies */}
+        <div style={styles.suggestedMoviesBox}>
+          <div>
+            <Text style={styles.suggestedMovieDetails}>
+              <b> Check out other movies filmed here! </b> 
+            </Text>
           </div>
+          <div style={styles.suggestedMoviesContainers}>
+            <RelatedMovies movieList={movieList} movieIndex={movieIndex} searchedLocation={searchedLocation} />
+          </div>  
+        </div>
       </View>
     </>
   );
