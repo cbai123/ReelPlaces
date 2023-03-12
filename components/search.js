@@ -1,7 +1,7 @@
 import { useState } from "react"
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import GetList from './GetList'
-import { GOOGLE_KEY, BACKEND_URL } from '@env'
+import { GOOGLE_KEY, BACKEND_URL } from '@env' 
 import styles from "../styles";
 
 const Search = (props) => {
